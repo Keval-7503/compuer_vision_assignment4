@@ -317,7 +317,11 @@ def launch_app():
 
 
 if __name__ == "__main__":
-    print("=" * 60)
-    print("Starting Gradio App for Assignment 4")
-    print("=" * 60)
-    launch_app()
+    try:
+        demo = build_ui()   # or launch_ui()
+    except NameError:
+        # fall back if you exposed the interface as `app` instead of a function
+        import gradio as gr
+        demo = gr.load("gradio_app:app")  # or however you defined it
+    demo.launch(share=True)
+
