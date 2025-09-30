@@ -114,14 +114,42 @@ jupyter notebook Assignment4_AR_PyTorch3D.ipynb
 
 ## 📝 How to Use
 
+### Basic Usage (Default Demo)
+
 1. **Run in Colab** (easiest - click badge above)
-2. **Execute setup cells** to install dependencies
-3. **Run all cells** sequentially
+2. **Execute setup cell**
+3. **Run pipeline:** `run_ar_pipeline()`
 4. **Check results** - images will display inline
-5. **Customize** (optional):
-   - Add your own images to `data/`
-   - Update corner points in notebook
-   - Try different object positions/colors
+
+### Using Your Own Image 📷
+
+See **[HOW_TO_USE_YOUR_IMAGE.md](HOW_TO_USE_YOUR_IMAGE.md)** for detailed guide.
+
+**Quick Example:**
+
+```python
+# 1. Upload your image
+from google.colab import files
+uploaded = files.upload()
+
+# 2. Define corner points (top-left, top-right, bottom-right, bottom-left)
+import numpy as np
+image_points_2d = np.array([
+    [150, 100],   # Top-left
+    [500, 120],   # Top-right
+    [480, 400],   # Bottom-right
+    [130, 380]    # Bottom-left
+], dtype=np.float32)
+
+# 3. Run with your image
+from run_ar_pipeline import run_ar_pipeline_custom
+run_ar_pipeline_custom(
+    image_path=list(uploaded.keys())[0],
+    image_points_2d=image_points_2d,
+    object_width=0.21,    # Object width in meters
+    object_height=0.297   # Object height in meters
+)
+```
 
 ---
 
