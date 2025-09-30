@@ -275,4 +275,7 @@ def run_ar_pipeline_custom(image_path, image_points_2d, object_width, object_hei
 
 
 if __name__ == "__main__":
-    run_ar_pipeline()
+    # Launch Gradio UI by default
+    from gradio_app import launch_app
+    print("Launching Gradio Interface...")
+    launch_app()
