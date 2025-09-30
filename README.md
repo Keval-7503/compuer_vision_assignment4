@@ -4,34 +4,61 @@ Renders synthetic 3D objects onto real images using camera pose estimation and P
 
 ---
 
-## 🚀 Run in Google Colab (Super Simple!)
+## 🚀 Run in Google Colab (3 Ways!)
 
-### Option 1: Simple Version (Just 2 cells!) ⭐ RECOMMENDED
+### Option 1: Interactive Gradio App (Most Fun!) 🎨 ⭐ RECOMMENDED
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Keval-7503/compuer_vision_assignment4/blob/main/Assignment4_Gradio.ipynb)
+
+**Interactive web interface** - Upload images, choose objects, adjust settings!
+
+**Setup + Launch (2 cells):**
+```python
+# Cell 1: Setup
+!git clone https://github.com/Keval-7503/compuer_vision_assignment4.git
+%cd compuer_vision_assignment4
+!pip install -q torch torchvision fvcore iopath gradio
+!pip install -q "git+https://github.com/facebookresearch/pytorch3d.git"
+
+# Cell 2: Launch App
+from gradio_app import launch_app
+launch_app()
+```
+
+**Features:**
+- 📤 Upload your own images
+- 🎯 Interactive corner selection
+- 🎨 Choose object type & color
+- ⚙️ Adjust size & position
+- 📊 Real-time grading feedback
+
+---
+
+### Option 2: Simple Pipeline (Just 2 cells!)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Keval-7503/compuer_vision_assignment4/blob/main/Assignment4_Simple.ipynb)
 
-**Cell 1 - Setup:**
+**Runs everything automatically with default demo:**
+
 ```python
+# Cell 1: Setup
 !git clone https://github.com/Keval-7503/compuer_vision_assignment4.git
 %cd compuer_vision_assignment4
-!pip install -q torch torchvision fvcore iopath && pip install -q "git+https://github.com/facebookresearch/pytorch3d.git"
-```
+!pip install -q torch torchvision fvcore iopath
+!pip install -q "git+https://github.com/facebookresearch/pytorch3d.git"
 
-**Cell 2 - Run Pipeline:**
-```python
+# Cell 2: Run
 from run_ar_pipeline import run_ar_pipeline
 run_ar_pipeline()
 ```
 
-**That's it!** Everything runs automatically! 🎉
-
 ---
 
-### Option 2: Detailed Version (Step-by-step)
+### Option 3: Detailed Notebook (Step-by-step)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Keval-7503/compuer_vision_assignment4/blob/main/Assignment4_AR_PyTorch3D.ipynb)
 
-For detailed explanations and customization options.
+For detailed explanations and manual customization.
 
 ---
 
