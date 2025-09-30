@@ -6,17 +6,17 @@ Renders synthetic 3D objects onto real images using camera pose estimation and P
 
 ## 🚀 Run in Google Colab (Recommended)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR_USERNAME/compuer_vision_assignment4/blob/main/Assignment4_AR_PyTorch3D.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Keval-7503/compuer_vision_assignment4/blob/main/Assignment4_AR_PyTorch3D.ipynb)
 
-### Quick Setup (3 lines):
+### Quick Setup (Just copy-paste in Colab):
 
 ```python
-!git clone https://github.com/YOUR_USERNAME/compuer_vision_assignment4.git
+!git clone https://github.com/Keval-7503/compuer_vision_assignment4.git
 %cd compuer_vision_assignment4
 !pip install -q fvcore iopath pytorch3d
 ```
 
-Then run all cells!
+Then click "Run All" cells!
 
 ---
 
@@ -77,7 +77,7 @@ If you want to run locally:
 
 ```bash
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/compuer_vision_assignment4.git
+git clone https://github.com/Keval-7503/compuer_vision_assignment4.git
 cd compuer_vision_assignment4
 
 # Create virtual environment
