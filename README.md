@@ -4,19 +4,34 @@ Renders synthetic 3D objects onto real images using camera pose estimation and P
 
 ---
 
-## 🚀 Run in Google Colab (Recommended)
+## 🚀 Run in Google Colab (Super Simple!)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Keval-7503/compuer_vision_assignment4/blob/main/Assignment4_AR_PyTorch3D.ipynb)
+### Option 1: Simple Version (Just 2 cells!) ⭐ RECOMMENDED
 
-### Quick Setup (Just copy-paste in Colab):
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Keval-7503/compuer_vision_assignment4/blob/main/Assignment4_Simple.ipynb)
 
+**Cell 1 - Setup:**
 ```python
 !git clone https://github.com/Keval-7503/compuer_vision_assignment4.git
 %cd compuer_vision_assignment4
-!pip install -q fvcore iopath pytorch3d
+!pip install -q torch torchvision fvcore iopath && pip install -q "git+https://github.com/facebookresearch/pytorch3d.git"
 ```
 
-Then click "Run All" cells!
+**Cell 2 - Run Pipeline:**
+```python
+from run_ar_pipeline import run_ar_pipeline
+run_ar_pipeline()
+```
+
+**That's it!** Everything runs automatically! 🎉
+
+---
+
+### Option 2: Detailed Version (Step-by-step)
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Keval-7503/compuer_vision_assignment4/blob/main/Assignment4_AR_PyTorch3D.ipynb)
+
+For detailed explanations and customization options.
 
 ---
 
