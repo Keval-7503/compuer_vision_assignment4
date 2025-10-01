@@ -6,7 +6,7 @@ A complete AR system that renders synthetic 3D objects onto real images using ca
 
 ## 🚀 Quick Start
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Keval-7503/compuer_vision_assignment4/blob/main/Assignment4_Gradio.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Keval-7503/compuer_vision_assignment4/blob/main/Assignment4.ipynb)
 
 **Run in Google Colab (2 cells):**
 
@@ -16,7 +16,7 @@ A complete AR system that renders synthetic 3D objects onto real images using ca
 !git clone https://github.com/Keval-7503/compuer_vision_assignment4.git
 %cd compuer_vision_assignment4
 !git pull
-!pip install -q torch torchvision fvcore iopath gradio
+!pip install -q torch torchvision fvcore iopath
 !pip install -q "git+https://github.com/facebookresearch/pytorch3d.git"
 
 # Cell 2: Run
@@ -24,7 +24,7 @@ from run_ar_pipeline import run_ar_pipeline
 run_ar_pipeline()
 ```
 
-Opens Gradio UI (interface wrapper) - all processing happens in backend code.
+Runs complete AR pipeline - all processing happens in backend code (`src/` folder).
 
 ---
 
@@ -132,13 +132,12 @@ result = alpha * foreground + (1 - alpha) * background
 **Project Structure:**
 ```
 src/
-├── pose_estimation.py    # Camera pose from planar objects
-├── renderer.py           # PyTorch3D rendering pipeline
-├── object_placement.py   # 3D object creation & positioning
-├── visualization.py      # Image compositing & display
-└── utils.py             # Helper functions
+├── pose_estimation.py    # Camera pose from planar objects (20 pts)
+├── renderer.py           # PyTorch3D rendering pipeline (25 pts)
+├── object_placement.py   # 3D object creation & positioning (25 pts)
+├── visualization.py      # Image compositing & display (20 pts)
+└── utils.py             # Helper functions (10 pts)
 
-gradio_app.py            # UI wrapper (interface only)
 run_ar_pipeline.py       # Main pipeline orchestration
 ```
 
@@ -261,34 +260,18 @@ Transform = [[-1, 0, 0],
 
 ---
 
-## 🎨 Gradio Interface
-
-The Gradio UI (`gradio_app.py`) is a **wrapper for user interaction**. All AR processing happens in the backend code (`src/` folder).
-
-**UI Features:**
-- Upload custom images
-- Select object type (cube, pyramid, tetrahedron)
-- Choose color (8 options)
-- Adjust size and height
-- View results and grading info
-
-**Note**: Gradio is for presentation - the core implementation is in `src/`.
-
----
-
 ## 📁 Project Structure
 
 ```
 compuer_vision_assignment4/
-├── src/                          # Core implementation
-│   ├── pose_estimation.py        # Pose from plane
-│   ├── renderer.py               # PyTorch3D setup
-│   ├── object_placement.py       # 3D objects
-│   ├── visualization.py          # Compositing
-│   └── utils.py                  # Helpers
-├── gradio_app.py                 # UI wrapper
+├── src/                          # Core implementation (100 pts)
+│   ├── pose_estimation.py        # Camera pose (20 pts)
+│   ├── renderer.py               # PyTorch3D setup (25 pts)
+│   ├── object_placement.py       # 3D objects (25 pts)
+│   ├── visualization.py          # Compositing (20 pts)
+│   └── utils.py                  # Helpers (10 pts)
 ├── run_ar_pipeline.py            # Pipeline orchestration
-├── Assignment4_Gradio.ipynb      # Colab notebook
+├── Assignment4.ipynb             # Colab notebook
 ├── requirements.txt              # Dependencies
 ├── PROJECT_OVERVIEW.md           # Technical details
 └── README.md                     # This file
@@ -302,7 +285,7 @@ compuer_vision_assignment4/
 - PyTorch 2.0+
 - PyTorch3D 0.7.5+
 - OpenCV 4.5+
-- NumPy, Matplotlib, Gradio
+- NumPy, Matplotlib
 
 Full list in `requirements.txt`
 
@@ -328,7 +311,7 @@ Full list in `requirements.txt`
 ✅ **Accurate Pose**: RMSE < 5 pixels for good images
 ✅ **Correct Rendering**: Objects align with plane geometry
 ✅ **Multiple Objects**: Supports cube, pyramid, tetrahedron
-✅ **Real-time**: Gradio UI for interactive adjustments
+✅ **Efficient**: Fast rendering with PyTorch3D
 ✅ **Production Ready**: Clean, modular, documented code
 
 ---
