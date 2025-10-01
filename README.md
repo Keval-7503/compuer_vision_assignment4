@@ -8,7 +8,7 @@ A complete AR system that renders synthetic 3D objects onto real images using ca
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Keval-7503/compuer_vision_assignment4/blob/main/Assignment4.ipynb)
 
-**Run in Google Colab (2 cells):**
+### Option 1: Run Demo Pipeline (Default)
 
 ```python
 # Cell 1: Setup
@@ -19,12 +19,37 @@ A complete AR system that renders synthetic 3D objects onto real images using ca
 !pip install -q torch torchvision fvcore iopath
 !pip install -q "git+https://github.com/facebookresearch/pytorch3d.git"
 
-# Cell 2: Run
+# Cell 2: Run demo
 from run_ar_pipeline import run_ar_pipeline
 run_ar_pipeline()
 ```
 
-Runs complete AR pipeline - all processing happens in backend code (`src/` folder).
+### Option 2: Use Your Own Image
+
+After running Cell 1 (Setup), run these cells:
+
+**Cell 3: Upload your image**
+```python
+from google.colab import files
+uploaded = files.upload()  # Click to upload your image
+```
+
+**Cell 4: Mark 4 corners**
+- Image displays with grid
+- Enter pixel coordinates for 4 corners (Top-Left, Top-Right, Bottom-Right, Bottom-Left)
+
+**Cell 5: Enter object dimensions**
+```python
+# Example: A4 paper = 21cm x 29.7cm, Notebook = 20cm x 25cm
+Width in cm: 21
+Height in cm: 29.7
+```
+
+**Cell 6: Run AR pipeline**
+- Renders 3D objects on your image
+- Results displayed and saved to `results/custom_ar_result.png`
+
+All processing happens in backend code (`src/` folder).
 
 ---
 
